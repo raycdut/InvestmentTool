@@ -18,9 +18,17 @@ class FundListSpider(scrapy.Spider):
         strResult = response.text[7:]
         resultobj = demjson.decode(strResult)
 
+        #return fund data start
+        
+
+        # return fund data end
+
+
+        #process next page if have.
+
         self.max_index = int(resultobj['pages'])
         nextUrl = self.get_next_page(response.status)
-        if self.start_index < self.max_index:
+        if self.start_index <= self.max_index:
             yield scrapy.Request(url=nextUrl, callback=self.parse)
 
     def get_next_page(self, status):
