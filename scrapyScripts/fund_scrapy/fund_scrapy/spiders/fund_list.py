@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import json
+import demjson
 
 
 class FundListSpider(scrapy.Spider):
@@ -13,6 +15,10 @@ class FundListSpider(scrapy.Spider):
 
     def parse(self, response):
         print('current page : {0}'.format(response.url))
+        strResult = response.text[7:]
+        resultobj = demjson.decode(strResult)
+
+        self.max_index = int(resultobj['pages'])
         nextUrl = self.get_next_page(response.status)
         if self.start_index < self.max_index:
             yield scrapy.Request(url=nextUrl, callback=self.parse)
