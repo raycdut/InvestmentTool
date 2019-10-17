@@ -65,9 +65,10 @@ SPIDER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'fund_scrapy.pipelines.FundScrapyPipeline': 300,
-# }
+ITEM_PIPELINES = {
+    'fund_scrapy.pipelines.FundPostgrePipeline': 300,
+    'fund_scrapy.pipelines.FundMongoPipeline': 200
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
