@@ -2,6 +2,7 @@
 import scrapy
 import json
 import demjson
+from fund_scrapy.items import Fund
 
 
 class FundListSpider(scrapy.Spider):
@@ -18,13 +19,22 @@ class FundListSpider(scrapy.Spider):
         strResult = response.text[7:]
         resultobj = demjson.decode(strResult)
 
-        #return fund data start
-        
+        # return fund data start
+        for item in resultobj['datas']:
+            fund = Fund()
+            fund['FundCode'] = item[0]
+            fund['FundDescription'] = item[1]
+            fund['FundBuyStatus'] = item[9]
+            fund['FundSellStatus'] = item[10]
+            if item[-3]:
+                fund['FundFee'] = float(item[-3].strip('%')) / 100
+            else:
+                fund['FundFee'] = 0.00
 
+            yield fund
         # return fund data end
 
-
-        #process next page if have.
+        # process next page if have.
 
         self.max_index = int(resultobj['pages'])
         nextUrl = self.get_next_page(response.status)

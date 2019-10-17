@@ -1,11 +1,11 @@
 {
   "modules": [
     {
-      "name": "InvestmentAllocation",
+      "name": "InvestmentFundData",
       "chnname": "",
       "entities": [
         {
-          "title": "AllocationSheet",
+          "title": "Fund",
           "fields": [
             {
               "name": "REVISION",
@@ -36,11 +36,100 @@
               "type": "DateTime",
               "remark": "",
               "chnname": "更新时间"
+            },
+            {
+              "name": "Fund_Code",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "FundCode"
+            },
+            {
+              "name": "Fund_Description",
+              "type": "MiddleString",
+              "remark": "",
+              "chnname": "FundDescription"
+            },
+            {
+              "name": "Fund_Buy_Status",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "FundBuyStatus"
+            },
+            {
+              "name": "Fund_Sell_Status",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "FundSellStatus"
+            },
+            {
+              "name": "Fund_Fee",
+              "type": "Ratio",
+              "remark": "",
+              "chnname": "FundFee"
+            },
+            {
+              "name": "ID",
+              "type": "BigInt",
+              "remark": "",
+              "chnname": "ID",
+              "pk": true,
+              "notNull": true
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
             }
           ]
         }
       ],
-      "graphCanvas": {}
+      "graphCanvas": {
+        "nodes": [],
+        "edges": []
+      },
+      "associations": []
     }
   ],
   "dataTypeDomains": {
@@ -526,7 +615,7 @@
     "dbs": [
       {
         "name": "investment-dev",
-        "defaultDB": false,
+        "defaultDB": true,
         "properties": {
           "driver_class_name": "org.postgresql.Driver",
           "url": "jdbc:postgresql://localhost:32678/investment-dev",
@@ -537,7 +626,7 @@
       },
       {
         "name": "pi-investment-db-dev",
-        "defaultDB": true,
+        "defaultDB": false,
         "properties": {
           "driver_class_name": "org.postgresql.Driver",
           "url": "jdbc:postgresql://192.168.3.18:5432/investment-db-dev",

@@ -1,0 +1,170 @@
+{
+  "modules": [
+    {
+      "name": "InvestmentFundData",
+      "chnname": "",
+      "entities": [
+        {
+          "title": "Fund",
+          "fields": [
+            {
+              "name": "REVISION",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "乐观锁"
+            },
+            {
+              "name": "CREATED_BY",
+              "type": "IdOrKey",
+              "remark": "",
+              "chnname": "创建人"
+            },
+            {
+              "name": "CREATED_TIME",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "创建时间"
+            },
+            {
+              "name": "UPDATED_BY",
+              "type": "IdOrKey",
+              "remark": "",
+              "chnname": "更新人"
+            },
+            {
+              "name": "UPDATED_TIME",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "更新时间"
+            },
+            {
+              "name": "Fund_Code",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "FundCode"
+            },
+            {
+              "name": "Fund_Description",
+              "type": "MiddleString",
+              "remark": "",
+              "chnname": "FundDescription"
+            },
+            {
+              "name": "Fund_Buy_Status",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "FundBuyStatus"
+            },
+            {
+              "name": "Fund_Sell_Status",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "FundSellStatus"
+            },
+            {
+              "name": "Fund_Fee",
+              "type": "Ratio",
+              "remark": "",
+              "chnname": "FundFee"
+            },
+            {
+              "name": "ID",
+              "type": "BigInt",
+              "remark": "",
+              "chnname": "ID",
+              "pk": true,
+              "notNull": true
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ]
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [],
+        "edges": []
+      },
+      "associations": []
+    }
+  ],
+  "message": "udpate",
+  "version": "v1.1",
+  "changes": [
+    {
+      "type": "field",
+      "name": "Fund.Fund_Code",
+      "opt": "add"
+    },
+    {
+      "type": "field",
+      "name": "Fund.Fund_Description",
+      "opt": "add"
+    },
+    {
+      "type": "field",
+      "name": "Fund.Fund_Buy_Status",
+      "opt": "add"
+    },
+    {
+      "type": "field",
+      "name": "Fund.Fund_Sell_Status",
+      "opt": "add"
+    },
+    {
+      "type": "field",
+      "name": "Fund.Fund_Fee",
+      "opt": "add"
+    },
+    {
+      "type": "field",
+      "name": "Fund.ID",
+      "opt": "add"
+    }
+  ],
+  "date": "2019/10/17 15:10:6"
+}

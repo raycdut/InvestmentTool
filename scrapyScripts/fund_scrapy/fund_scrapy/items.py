@@ -8,7 +8,10 @@
 import scrapy
 
 
-class FundScrapyItem(scrapy.Item):
+class Fund(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    FundCode = scrapy.Field()
+    FundDescription = scrapy.Field()
+    FundBuyStatus = scrapy.Field()
+    FundSellStatus = scrapy.Field()
+    FundFee = scrapy.Field()
