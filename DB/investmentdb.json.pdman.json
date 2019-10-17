@@ -526,12 +526,23 @@
     "dbs": [
       {
         "name": "investment-dev",
-        "defaultDB": true,
+        "defaultDB": false,
         "properties": {
           "driver_class_name": "org.postgresql.Driver",
           "url": "jdbc:postgresql://localhost:32678/investment-dev",
           "password": "mysecretpassword",
           "username": "postgres"
+        },
+        "type": "PostgreSQL"
+      },
+      {
+        "name": "pi-investment-db-dev",
+        "defaultDB": true,
+        "properties": {
+          "driver_class_name": "org.postgresql.Driver",
+          "url": "jdbc:postgresql://192.168.3.18:5432/investment-db-dev",
+          "password": "abc@1234",
+          "username": "pi"
         },
         "type": "PostgreSQL"
       }
